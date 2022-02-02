@@ -52,10 +52,10 @@ public class AppPilotos {
                     Boolean formatoCpf = false;
 
                     do {
-                        System.out.println("\nCPF: [Formato: 12345678910]");
+                        System.out.println("\nCPF: [Formato: 123.456.789-10]");
                         cpf = (in.nextLine());
 
-                        if (!(cpf.length() == 11)) {
+                        if (!(cpf.matches("\\d{3}.\\d{3}.\\d{3}-\\d{2}"))) {
                             System.out.println(
                                     "\nERRO!\nCPF informado nao atende o Formato estabelecido!\nTente Novamente...");
                             formatoCpf = false;
