@@ -1,0 +1,36 @@
+import java.util.ArrayList;
+
+import classes.*;
+
+public class App {
+    public static void main(String[] args) throws Exception {
+        System.out.println("_____________________________\n");
+
+        ArrayList<Pessoa> cadus = new ArrayList<>();
+
+        for (int i = 0; i < 10; i++) {
+            Pessoa cadu = new Pessoa("Cadu " + i, "123");
+            cadus.add(cadu);
+        }
+
+        for (Pessoa c : cadus) {
+            System.out.println(c.getNome());
+        }
+
+        System.out.println("______________________________");
+    }
+}
+
+________________________________________________________________________________________________
+for (Pessoa c : cadus) {
+            if (c.getClass() == Piloto.class) {
+                System.out.println(c.getNome() + ((Piloto) c).getBreve());
+                int qntdAeronaves = ((Piloto) c).getAeronaves().size();
+                for(Aeronave a : ((Piloto) c).getAeronaves()){
+                    
+                    System.out.println(((Piloto) c).getAeronaves().get(qntdAeronaves).getBreve);
+                }
+            } else {
+                System.out.println(c.getNome() + c.getCpf());
+            }
+        }
