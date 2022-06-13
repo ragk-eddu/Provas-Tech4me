@@ -1,6 +1,8 @@
+import java.util.List;
 import java.util.Scanner;
 
 import javax.naming.InvalidNameException;
+import javax.xml.validation.Validator;
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -18,12 +20,24 @@ public class App {
             System.out.println("\nInforme a quantidade de parcelas que deseja pagar:");
             qntdParcelas = in.nextInt();
 
-            if(valorEmprestimo<rendaMensal*10 && valorEmprestimo/qntdParcelas<=rendaMensal*0.3){ // Yes
-                System.out.println("\nFinanciamento Aceito :)\n\n");
+            System.out.println(processamento(valorEmprestimo, rendaMensal, qntdParcelas));
 
-            } else { System.out.println("\nFinanciamento rejeitado :("); }
+        } 
+    }
+
+    
+    public static String processamento (Double valorEmprestimo, Double rendaMensal, int qntdParcelas){
+
+        String resultado;
+
+        if(valorEmprestimo<rendaMensal*10 && valorEmprestimo/qntdParcelas<=rendaMensal*0.3){
+            resultado = "\nFinanciamento Aceito :)\n\n";
+
+        } else { 
+            resultado ="\nFinanciamento rejeitado :(\n\n";
         }
 
-        
+        return resultado;
     }
-}
+}           
+
